@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10, <3.12"
 resolution-markers = [
     "python_full_version >= '3.11' and platform_machine != 'aarch64' and sys_platform == 'linux'",
@@ -14,6 +14,7 @@ resolution-markers = [
 
 [manifest]
 members = [
+    "gmxtop",
     "kimmdy",
     "kimmdy-dimerization",
     "kimmdy-grappa",
@@ -795,6 +796,124 @@ wheels = [
 ]
 
 [[package]]
+name = "gmxtop"
+version = "0.0.2"
+source = { editable = "plugins/gmxtop" }
+dependencies = [
+    { name = "numpy" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "black" },
+    { name = "certifi" },
+    { name = "griffe" },
+    { name = "hypothesis" },
+    { name = "jsonschema" },
+    { name = "jsonschema-specifications" },
+    { name = "jupyter" },
+    { name = "markdown-it-py" },
+    { name = "pycallgraph2" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-mock" },
+    { name = "pytz" },
+    { name = "referencing" },
+    { name = "rich" },
+    { name = "rpds-py" },
+    { name = "six" },
+    { name = "tox" },
+    { name = "tox-uv" },
+    { name = "typing-extensions" },
+    { name = "tzdata" },
+    { name = "watchdog" },
+    { name = "zipp" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "black" },
+    { name = "certifi" },
+    { name = "griffe" },
+    { name = "hypothesis" },
+    { name = "jsonschema" },
+    { name = "jsonschema-specifications" },
+    { name = "jupyter" },
+    { name = "markdown-it-py" },
+    { name = "pycallgraph2" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-mock" },
+    { name = "pytz" },
+    { name = "referencing" },
+    { name = "rich" },
+    { name = "rpds-py" },
+    { name = "six" },
+    { name = "tox" },
+    { name = "tox-uv" },
+    { name = "typing-extensions" },
+    { name = "tzdata" },
+    { name = "watchdog" },
+    { name = "zipp" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "black", marker = "extra == 'dev'" },
+    { name = "certifi", marker = "extra == 'dev'", specifier = ">=2025.6" },
+    { name = "griffe", marker = "extra == 'dev'", specifier = ">=0.33,<1.0.0" },
+    { name = "hypothesis", marker = "extra == 'dev'" },
+    { name = "jsonschema", marker = "extra == 'dev'", specifier = ">=4.24" },
+    { name = "jsonschema-specifications", marker = "extra == 'dev'", specifier = ">=2025.4" },
+    { name = "jupyter", marker = "extra == 'dev'" },
+    { name = "markdown-it-py", marker = "extra == 'dev'", specifier = ">=3.0" },
+    { name = "numpy" },
+    { name = "pycallgraph2", marker = "extra == 'dev'" },
+    { name = "pytest", marker = "extra == 'dev'" },
+    { name = "pytest-cov", marker = "extra == 'dev'" },
+    { name = "pytest-mock", marker = "extra == 'dev'" },
+    { name = "pytz", marker = "extra == 'dev'", specifier = ">=2025.2" },
+    { name = "referencing", marker = "extra == 'dev'", specifier = ">=0.36" },
+    { name = "rich", marker = "extra == 'dev'", specifier = ">=14.0" },
+    { name = "rpds-py", marker = "extra == 'dev'", specifier = ">=0.26" },
+    { name = "six", marker = "extra == 'dev'", specifier = ">=1.17" },
+    { name = "tox", marker = "extra == 'dev'" },
+    { name = "tox-uv", marker = "extra == 'dev'" },
+    { name = "typing-extensions", marker = "extra == 'dev'", specifier = ">=4.14" },
+    { name = "tzdata", marker = "extra == 'dev'", specifier = ">=2025.2" },
+    { name = "watchdog", marker = "extra == 'dev'", specifier = ">=6.0" },
+    { name = "zipp", marker = "extra == 'dev'", specifier = ">=3.23" },
+]
+provides-extras = ["dev"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "black" },
+    { name = "certifi", specifier = ">=2025.6" },
+    { name = "griffe", specifier = ">=0.33,<1.0.0" },
+    { name = "hypothesis" },
+    { name = "jsonschema", specifier = ">=4.24" },
+    { name = "jsonschema-specifications", specifier = ">=2025.4" },
+    { name = "jupyter" },
+    { name = "markdown-it-py", specifier = ">=3.0" },
+    { name = "pycallgraph2" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
+    { name = "pytest-mock" },
+    { name = "pytz", specifier = ">=2025.2" },
+    { name = "referencing", specifier = ">=0.36" },
+    { name = "rich", specifier = ">=14.0" },
+    { name = "rpds-py", specifier = ">=0.26" },
+    { name = "six", specifier = ">=1.17" },
+    { name = "tox" },
+    { name = "tox-uv" },
+    { name = "typing-extensions", specifier = ">=4.14" },
+    { name = "tzdata", specifier = ">=2025.2" },
+    { name = "watchdog", specifier = ">=6.0" },
+    { name = "zipp", specifier = ">=3.23" },
+]
+
+[[package]]
 name = "google-auth"
 version = "1.6.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1510,6 +1629,7 @@ name = "kimmdy"
 version = "8.3.0"
 source = { editable = "." }
 dependencies = [
+    { name = "gmxtop" },
     { name = "importlib-metadata" },
     { name = "mdanalysis" },
     { name = "numpy" },
@@ -1598,6 +1718,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "gmxtop", editable = "plugins/gmxtop" },
     { name = "grappa-ff", marker = "extra == 'grappa'" },
     { name = "importlib-metadata" },
     { name = "kimmdy", extras = ["analysis"], marker = "extra == 'all'", editable = "." },
@@ -1668,6 +1789,7 @@ dev = [
     { name = "black" },
     { name = "pytest" },
     { name = "pytest-cov" },
+    { name = "pytest-mock" },
     { name = "tox" },
     { name = "tox-uv" },
 ]
@@ -1683,6 +1805,7 @@ dev = [
     { name = "black" },
     { name = "pytest" },
     { name = "pytest-cov" },
+    { name = "pytest-mock" },
     { name = "tox" },
     { name = "tox-uv" },
 ]
@@ -1723,7 +1846,7 @@ provides-extras = ["dev"]
 
 [[package]]
 name = "kimmdy-hat"
-version = "1.1.0"
+version = "1.2.0"
 source = { editable = "plugins/kimmdy-hat" }
 dependencies = [
     { name = "ase" },
@@ -1780,7 +1903,7 @@ dev = [
 
 [[package]]
 name = "kimmdy-hydrolysis"
-version = "0.3.0"
+version = "0.5.1"
 source = { editable = "plugins/kimmdy-hydrolysis" }
 dependencies = [
     { name = "freesasa" },
@@ -1791,38 +1914,49 @@ dependencies = [
 [package.optional-dependencies]
 dev = [
     { name = "black" },
+    { name = "grappa-ff" },
     { name = "griffe" },
     { name = "jupyter" },
+    { name = "kimmdy-grappa" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "plotnine" },
     { name = "pytest" },
+    { name = "pytest-cov" },
     { name = "quartodoc" },
     { name = "statsmodels" },
+    { name = "torch", version = "2.0.0", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or sys_platform == 'darwin'" },
+    { name = "torch", version = "2.0.0+cpu", source = { registry = "https://download.pytorch.org/whl/cpu" }, marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
     { name = "tox" },
+    { name = "tox-uv" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "black", marker = "extra == 'dev'" },
     { name = "freesasa" },
+    { name = "grappa-ff", marker = "extra == 'dev'" },
     { name = "griffe", marker = "extra == 'dev'", specifier = ">=0.33,<1.0.0" },
     { name = "jupyter", marker = "extra == 'dev'" },
     { name = "kimmdy", editable = "." },
+    { name = "kimmdy-grappa", marker = "extra == 'dev'", editable = "plugins/kimmdy-grappa" },
     { name = "mdanalysis" },
     { name = "numpy", marker = "extra == 'dev'" },
     { name = "pandas", marker = "extra == 'dev'" },
     { name = "plotnine", marker = "extra == 'dev'" },
     { name = "pytest", marker = "extra == 'dev'" },
+    { name = "pytest-cov", marker = "extra == 'dev'" },
     { name = "quartodoc", marker = "extra == 'dev'" },
     { name = "statsmodels", marker = "extra == 'dev'" },
+    { name = "torch", marker = "extra == 'dev'", index = "https://download.pytorch.org/whl/cpu" },
     { name = "tox", marker = "extra == 'dev'" },
+    { name = "tox-uv", marker = "extra == 'dev'" },
 ]
 provides-extras = ["dev"]
 
 [[package]]
 name = "kimmdy-reactions"
-version = "1.1.1"
+version = "1.1.2"
 source = { editable = "plugins/kimmdy-reactions" }
 dependencies = [
     { name = "mdanalysis" },
@@ -3828,14 +3962,14 @@ dependencies = [
     { name = "typing-extensions", marker = "(platform_machine == 'aarch64' and sys_platform == 'linux') or sys_platform == 'darwin'" },
 ]
 wheels = [
-    { url = "https://download.pytorch.org/whl/torch-2.0.0-1-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:c9090bda7d2eeeecd74f51b721420dbeb44f838d4536cc1b284e879417e3064a" },
-    { url = "https://download.pytorch.org/whl/torch-2.0.0-1-cp311-cp311-manylinux2014_aarch64.whl", hash = "sha256:bd42db2a48a20574d2c33489e120e9f32789c4dc13c514b0c44272972d14a2d7" },
-    { url = "https://download.pytorch.org/whl/torch-2.0.0-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:9f01fe1f6263f31bd04e1757946fd63ad531ae37f28bb2dbf66f5c826ee089f4" },
-    { url = "https://download.pytorch.org/whl/cpu/torch-2.0.0-cp310-none-macosx_10_9_x86_64.whl", hash = "sha256:ce9b5a49bd513dff7950a5a07d6e26594dd51989cee05ba388b03e8e366fd5d5" },
-    { url = "https://download.pytorch.org/whl/cpu/torch-2.0.0-cp310-none-macosx_11_0_arm64.whl", hash = "sha256:53e1c33c6896583cdb9a583693e22e99266444c4a43392dddc562640d39e542b" },
-    { url = "https://download.pytorch.org/whl/torch-2.0.0-cp311-cp311-manylinux2014_aarch64.whl", hash = "sha256:d439aec349c98f12819e8564b8c54008e4613dd4428582af0e6e14c24ca85870" },
-    { url = "https://download.pytorch.org/whl/cpu/torch-2.0.0-cp311-none-macosx_10_9_x86_64.whl", hash = "sha256:01858620f25f25e7a9ec4b547ff38e5e27c92d38ec4ccba9cfbfb31d7071ed9c" },
-    { url = "https://download.pytorch.org/whl/cpu/torch-2.0.0-cp311-none-macosx_11_0_arm64.whl", hash = "sha256:9a2e53b5783ef5896a6af338b36d782f28e83c8ddfc2ac44b67b066d9d76f498" },
+    { url = "https://download-r2.pytorch.org/whl/torch-2.0.0-1-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:c9090bda7d2eeeecd74f51b721420dbeb44f838d4536cc1b284e879417e3064a", upload-time = "2023-10-06T21:39:01Z" },
+    { url = "https://download-r2.pytorch.org/whl/torch-2.0.0-1-cp311-cp311-manylinux2014_aarch64.whl", hash = "sha256:bd42db2a48a20574d2c33489e120e9f32789c4dc13c514b0c44272972d14a2d7", upload-time = "2023-10-06T21:39:05Z" },
+    { url = "https://download-r2.pytorch.org/whl/torch-2.0.0-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:9f01fe1f6263f31bd04e1757946fd63ad531ae37f28bb2dbf66f5c826ee089f4", upload-time = "2023-10-06T21:39:15Z" },
+    { url = "https://download-r2.pytorch.org/whl/cpu/torch-2.0.0-cp310-none-macosx_10_9_x86_64.whl", hash = "sha256:ce9b5a49bd513dff7950a5a07d6e26594dd51989cee05ba388b03e8e366fd5d5", upload-time = "2023-10-06T00:26:34Z" },
+    { url = "https://download-r2.pytorch.org/whl/cpu/torch-2.0.0-cp310-none-macosx_11_0_arm64.whl", hash = "sha256:53e1c33c6896583cdb9a583693e22e99266444c4a43392dddc562640d39e542b", upload-time = "2023-10-06T00:26:40Z" },
+    { url = "https://download-r2.pytorch.org/whl/torch-2.0.0-cp311-cp311-manylinux2014_aarch64.whl", hash = "sha256:d439aec349c98f12819e8564b8c54008e4613dd4428582af0e6e14c24ca85870", upload-time = "2023-10-06T21:39:18Z" },
+    { url = "https://download-r2.pytorch.org/whl/cpu/torch-2.0.0-cp311-none-macosx_10_9_x86_64.whl", hash = "sha256:01858620f25f25e7a9ec4b547ff38e5e27c92d38ec4ccba9cfbfb31d7071ed9c", upload-time = "2023-10-06T00:26:43Z" },
+    { url = "https://download-r2.pytorch.org/whl/cpu/torch-2.0.0-cp311-none-macosx_11_0_arm64.whl", hash = "sha256:9a2e53b5783ef5896a6af338b36d782f28e83c8ddfc2ac44b67b066d9d76f498", upload-time = "2023-10-06T00:26:51Z" },
 ]
 
 [[package]]
@@ -3857,10 +3991,10 @@ dependencies = [
     { name = "typing-extensions", marker = "(platform_machine != 'aarch64' and sys_platform == 'linux') or (sys_platform != 'darwin' and sys_platform != 'linux')" },
 ]
 wheels = [
-    { url = "https://download.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp310-cp310-linux_x86_64.whl", hash = "sha256:7c9e668462cd0813fc4baaeaa137efce2516e73cf381120846edf45d4ec21174" },
-    { url = "https://download.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp310-cp310-win_amd64.whl", hash = "sha256:82e5b6fbff93c7381325ba5cc2362849adbea2edd24fca013ee172eb288d6ca5" },
-    { url = "https://download.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp311-cp311-linux_x86_64.whl", hash = "sha256:09b32f2fae68b98a7a4f1fc64013e2144ea0147b6d075745599b237eff767b2b" },
-    { url = "https://download.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp311-cp311-win_amd64.whl", hash = "sha256:6d08b73b761fab284c7045b56075ee9f9832ebd71d8e1ef1c95d957955040951" },
+    { url = "https://download-r2.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp310-cp310-linux_x86_64.whl", hash = "sha256:7c9e668462cd0813fc4baaeaa137efce2516e73cf381120846edf45d4ec21174", upload-time = "2023-10-06T00:25:26Z" },
+    { url = "https://download-r2.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp310-cp310-win_amd64.whl", hash = "sha256:82e5b6fbff93c7381325ba5cc2362849adbea2edd24fca013ee172eb288d6ca5", upload-time = "2023-10-06T00:25:35Z" },
+    { url = "https://download-r2.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp311-cp311-linux_x86_64.whl", hash = "sha256:09b32f2fae68b98a7a4f1fc64013e2144ea0147b6d075745599b237eff767b2b", upload-time = "2023-10-06T00:25:43Z" },
+    { url = "https://download-r2.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp311-cp311-win_amd64.whl", hash = "sha256:6d08b73b761fab284c7045b56075ee9f9832ebd71d8e1ef1c95d957955040951", upload-time = "2023-10-06T00:25:52Z" },
 ]
 
 [[package]]
